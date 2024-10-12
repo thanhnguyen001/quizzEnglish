@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="menu">
+        <div class="menu-title active" id="topic" onclick="handleClickVocabularyTopics()">
+          <p>#Đề tài từ vựng</p>
+          <i class="down fa-solid fa-chevron-down"></i>
+          <i class="up fa-solid fa-chevron-up"></i>
+        </div>
+        <ul class="menu-list active" id="menu_list">
+          <li class="menu-item active">Type 1</li>
+          <li class="menu-item">Type 1</li>
+          <li class="menu-item">Type 1</li>
+          <li class="menu-item">Type 1</li>
+          <li class="menu-item">Type 1</li>
+          <li class="menu-item">Type 1</li>
+        </ul>
+
+        <div class="menu-title" id="otherSetting">
+          <p>#Cài đặt khác</p>
+          <i class="down fa-solid fa-chevron-down"></i>
+          <i class="up fa-solid fa-chevron-up"></i>
+        </div>
+      </div>
+      <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+          <button>Submit</button>
+        </div>
+        <div class="quiz-content">
+          <ul class="list-question">
+            <li>
+              <h4 id="question">Question text</h4>
+              <ul class="list-answer">
+                <li>
+                  <input type="radio" name="answer" id="a" class="answer" />
+                  <label for="a" id="a_text">Question</label>
+                </li>
+                <li>
+                  <input type="radio" name="answer" id="b" class="answer" />
+                  <label for="b" id="b_text">Question</label>
+                </li>
+
+                <li>
+                  <input type="radio" name="answer" id="c" class="answer" />
+                  <label for="c" id="c_text">Question</label>
+                </li>
+
+                <li>
+                  <input type="radio" name="answer" id="d" class="answer" />
+                  <label for="d" id="d_text">Question</label>
+                </li>
+              </ul>
+            </li>
+
+            
+
+            <li>
+              <h4 id="question">Question text</h4>
+              <ul>
+                <li>
+                  <input type="radio" name="answer" id="a" class="answer" />
+                  <label for="a" id="a_text">Question</label>
+                </li>
+                <li>
+                  <input type="radio" name="answer" id="b" class="answer" />
+                  <label for="b" id="b_text">Question</label>
+                </li>
+
+                <li>
+                  <input type="radio" name="answer" id="c" class="answer" />
+                  <label for="c" id="c_text">Question</label>
+                </li>
+
+                <li>
+                  <input type="radio" name="answer" id="d" class="answer" />
+                  <label for="d" id="d_text">Question</label>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <script src="./data.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

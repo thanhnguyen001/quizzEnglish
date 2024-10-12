@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  background-color: #d0d6ed;
+  height: 100vh;
+}
+main {
+  display: flex;
+  height: 100%;
+}
+.menu {
+  width: 200px;
+  background-color: rgb(228, 153, 178);
+}
+ul {
+  list-style: none;
+}
+
+.menu-title {
+  cursor: pointer;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 4px;
+  background-color: #d18290;
+  font-weight: 700;
+}
+
+#topic.active .down{
+  display: block;
+}
+#topic.active .up{
+  display: none;
+}
+#topic .down{
+  display: none;
+}
+#topic .up{
+  display: block;
+}
+
+#otherSetting.active .down{
+  display: block;
+}
+#otherSetting.active .up{
+  display: none;
+}
+#otherSetting .down{
+  display: none;
+}
+#otherSetting .up{
+  display: block;
+}
+
+.menu-list {
+  height: 0;
+  overflow: hidden;
+  transition: height 1s ease-in-out;
+}
+
+.menu-list.active {
+  height: auto;
+  transition: height 1s ease-in-out;
+}
+
+.menu-item {
+  /* background-color: palevioletred; */
+  padding: 4px 6px;
+  cursor: pointer;
+  border-bottom: 0.5px solid #ccc;
+  border-top: 0.5px solid #ccc;
+  transition: all 0.3s linear;
+}
+.menu-item.active {
+  background-color: rgb(236, 54, 115);
+}
+.menu-item:hover {
+  background-color: rgb(236, 54, 115);
+}
+
+#quiz {
+  flex: 1;
+  padding: 8px;
+  background-color: #d9a6af;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: center;
+}
+
+.list-question input[type="radio"] {
+  width: 14px;
+  height: 14px;
+}
+.list-answer li {
+  display: flex;
+  align-items: center;
+}
