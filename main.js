@@ -203,7 +203,7 @@ function init() {
   let html = '';
   Object.keys(data).forEach((topic, index) => {
     html += `
-      <li class="menu-item ${index === 0 ? "active" : ""}" onclick="handleActiveTopic('${topic}')">${topic}</li>
+      <li class="menu-item" onclick="handleActiveTopic('${topic}')">${topic}</li>
     `;
   })
   menuListE.innerHTML = html;
