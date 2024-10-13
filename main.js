@@ -38,7 +38,7 @@ const QUESTION = "Synonyms for phrase ";
 
 function convertQuestionsByTopic(topic) {
   questions = [];
-  listUserAnswers = [];
+  // listUserAnswers = [];
   quizE.classList.remove("review");
   Object.keys(data[topic]).forEach(key => {
     Object.keys(data[topic][key]).forEach(word => {
@@ -61,12 +61,12 @@ function convertQuestionsByTopic(topic) {
       [question.answers, question.correctIdx] = getRandomAnswer(key, question.correct, retainCorrect);
 
       questions.push(question);
-      listUserAnswers.push(false);
+      // listUserAnswers.push(false);
     })
   });
 
   renderQuestions();
-  // console.log('questions: ', questions);
+  console.log('questions: ', questions);
 }
 
 function renderQuestions() {
@@ -76,10 +76,18 @@ function renderQuestions() {
     list = list.slice(0, Number(numberOfQuestion.value));
   }
   let html = "";
-  list.forEach((q, index) => {
+  let count = 0;
+  listUserAnswers = [];
+  let index = 0;
+  while (list.length) {
+    index = Math.floor(Math.random() * list.length);
+
+    listUserAnswers.push(false);
+    const q = list[index];
+    count++;
     html += `
       <li>
-        <h4 id="question_${index}">${index + 1}. ${q.question}</h4>
+        <h4 id="question_${index}">${count}. ${q.question}</h4>
         <ul class="list-answer">
           <li class="${q.correctIdx === 0 ? "answer-correct" : "incorrect"}">
             <input type="radio" name="answer_${index}" id="a_${index}" class="answer" oninput="handleUserChoice(${index}, ${q.correctIdx === 0 ? true : false})" value="${q.answers[0]}" />
@@ -102,7 +110,10 @@ function renderQuestions() {
         </ul>
       </li>
     `;
-  });
+
+    list.splice(index, 1);
+  }
+
   listQuestionsE.innerHTML = html;
 }
 
